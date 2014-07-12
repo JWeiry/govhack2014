@@ -20,6 +20,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // routing requirements
 var municipalities = require('./app/routes/municipalities');
+var suburbs = require('./app/routes/suburbs');
+var postcodes = require('./app/routes/postcodes');
 
 /*
  router.use(function(req, res, next) {
@@ -39,13 +41,11 @@ router.get('/', function (req, res) {
 
 // here we have direct, root-level routing
 
-router.get('/municipality', municipalities.list);
-//router.get('/suburb',       suburbs.list);
-//router.get('/postcode',     postcodes.list);
-
-router.get('/municipality/:municipality_id', municipalities.view);
-//router.get('/suburb/:suburb',                suburbs.view);
-//router.get('/postcode/:postcode',            postcodes.view);
+router.get('/municipality',                             municipalities.list);
+router.get('/municipality/summary/:municipality_id',    municipalities.summary);
+router.get('/municipality/list/:municipality_id',       municipalities.view);
+router.get('/suburb/:suburb',                           suburbs.view);
+router.get('/postcode/:postcode',                       postcodes.view);
 
 
 // Start the server
