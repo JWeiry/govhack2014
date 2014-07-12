@@ -1,0 +1,79 @@
+<html>
+	<body>
+		
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<style>
+		.overlay {position:absolute; top: 0px; left: 0px;}
+		.grey {
+		filter: grayscale(1);
+		-webkit-filter: grayscale(1);
+		}
+		.hue1 {
+		filter: hue-rotate(120deg);
+		-webkit-filter: hue-rotate(120deg);
+		}
+		
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function() {
+setInterval(function(){
+				var rand = Math.floor((Math.random() * 45) + 1);
+				$($('img')[rand]).toggleClass('hue1');
+				$($('img')[rand]).fadeOut(1000);
+				$($('img')[rand]).fadeIn(3400);
+				},300);
+			});
+			</script>
+<div style="width:917px; height: 644px; position: relative; top: 20px; left:20px">
+
+<img src="Australia_Victoria_Melbourne_Shire.png" class="overlay">
+<img src="Australia_Victoria_Alpine_Shire_locator_map.png" class="overlay">
+<img src="Australia_Victoria_Ararat_RC.png" class="overlay">
+<img src="Australia_Victoria_Ballarat_City.png" class="overlay">
+<img src="Australia_Victoria_Bass_Coast_Shire.png" class="overlay">
+<img src="Australia_Victoria_Baw_Baw_Shire.png" class="overlay">
+<img src="Australia_Victoria_Benalla_RC_locator_map.png" class="overlay">
+<img src="Australia_Victoria_Buloke_Shire.png" class="overlay">
+<img src="Australia_Victoria_Campaspe_Shire.png" class="overlay">
+<img src="Australia_Victoria_Central_Goldfields_Shire.png" class="overlay">
+<img src="Australia_Victoria_Colac_Otway_Shire.png" class="overlay">
+<img src="Australia_Victoria_Corangamite_Shire.png" class="overlay">
+<img src="Australia_Victoria_East_Gippsland_Shire.png" class="overlay">
+<img src="Australia_Victoria_Gannawarra_Shire.png" class="overlay">
+<img src="Australia_Victoria_Glenelg_Shire.png" class="overlay">
+<img src="Australia_Victoria_Golden_Plains_Shire.png" class="overlay">
+<img src="Australia_Victoria_Greater_Bendigo_City.png" class="overlay">
+<img src="Australia_Victoria_Greater_Geelong_City.png" class="overlay">
+<img src="Australia_Victoria_Greater_Shepparton_City.png" class="overlay">
+<img src="Australia_Victoria_Hepburn_Shire.png" class="overlay">
+<img src="Australia_Victoria_Hindmarsh_Shire.png" class="overlay">
+<img src="Australia_Victoria_Horsham_RC.png" class="overlay">
+<img src="Australia_Victoria_Indigo_Shire.png" class="overlay">
+<img src="Australia_Victoria_Latrobe_City.png" class="overlay">
+<img src="Australia_Victoria_Loddon_Shire.png" class="overlay">
+<img src="Australia_Victoria_Macedon_Ranges_Shire.png" class="overlay">
+<img src="Australia_Victoria_Mansfield_Shire.png" class="overlay">
+<img src="Australia_Victoria_Mildura_RC.png" class="overlay">
+<img src="Australia_Victoria_Mitchell_Shire.png" class="overlay">
+<img src="Australia_Victoria_Moira_Shire.png" class="overlay">
+<img src="Australia_Victoria_Moorabool_Shire.png" class="overlay">
+<img src="Australia_Victoria_Mount_Alexander_Shire.png" class="overlay">
+<img src="Australia_Victoria_Moyne_Shire.png" class="overlay">
+<img src="Australia_Victoria_Murrindindi_Shire.png" class="overlay">
+<img src="Australia_Victoria_Northern_Grampians_Shire.png" class="overlay">
+<img src="Australia_Victoria_Pyrenees_Shire.png" class="overlay">
+<img src="Australia_Victoria_Queenscliffe_Borough.png" class="overlay">
+<img src="Australia_Victoria_South_Gippsland_Shire.png" class="overlay">
+<img src="Australia_Victoria_Southern_Grampians_Shire.png" class="overlay">
+<img src="Australia_Victoria_Strathbogie_Shire.png" class="overlay">
+<img src="Australia_Victoria_Surf_Coast_Shire.png" class="overlay">
+<img src="Australia_Victoria_Swan_Hill_RC.png" class="overlay">
+<img src="Australia_Victoria_Towong_Shire.png" class="overlay">
+<img src="Australia_Victoria_Wangaratta_RC.png" class="overlay">
+<img src="Australia_Victoria_Wellington_Shire.png" class="overlay">
+<img src="Australia_Victoria_West_Wimmera_Shire.png" class="overlay">
+<img src="Australia_Victoria_Wodonga_City.png" class="overlay">
+<img src="Australia_Victoria_Yarriambiack_Shire.png" class="overlay">
+	
+	</div>
+</html>
