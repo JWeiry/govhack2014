@@ -6,8 +6,8 @@
 		body {position: relative; background-color: #888; font-family: Arial, sans-serif}
 		.mainstage {width:917px; height: 644px; position: relative; margin: 0 auto; background-color: #ffffee;}
 		.controller button {width:125px;}
-		.controller {font-weight: bold; color: white; float: right; position: relative; top: 20px; right: 20px; width: 200px; height: 300px; background-color: rgba(0,0,0,0.5); text-align: center;}
-		.bg, .labels {position:absolute; top: 0px; left: 0px; }
+		.controller {font-weight: bold; color: white; float: right; position: relative; top: 20px; right: 20px; width: 200px; height: 330px; background-color: rgba(0,0,0,0.5); text-align: center;}
+		.bg, .labels, .fire {position:absolute; top: 0px; left: 0px; }
 		.overlay {position:absolute; top: 0px; left: 0px;
 		filter: hue-rotate(120deg);
 		-webkit-filter: hue-rotate(120deg);
@@ -1497,6 +1497,7 @@
 			$(document).ready(function(){
 			$('.overlay').fadeTo(10,0.5);
 				$('.labels').fadeTo(10,0.00);
+				$('.fire').fadeToggle(10);
 			});
 			
 			function setToYear(theyear) {
@@ -1576,6 +1577,7 @@
 <img src="../animate/Australia_Victoria_Wodonga_City.png" class="overlay">
 <img src="../animate/Australia_Victoria_Yarriambiack_Shire.png" class="overlay">
 	<img src="../animate/labels_lines.png" class="labels">
+	<img src="../animate/fire.png" class="fire">
 	<div class="controller">
 		<br>New Building density<br> (by year)<br>
 		<button onClick="$('.overlay').fadeTo(700,0.6)">Reset</button><br> 
@@ -1587,6 +1589,7 @@
 		<button onClick="setToYear('2014')">2014</button><br> 
 		<button onClick="$('.labels').fadeTo(700,0.99)">Show Labels</button><br> 
 		<button onClick="$('.labels').fadeTo(700,0.0)">Hide Labels</button> 
+		<button onClick="$('.fire').fadeToggle(700)">Toggle fires</button> 
 	</div>
 	</div>
 </html>
