@@ -7,15 +7,8 @@
 var express     = require('express');
 var router      = express.Router();
 var app         = express();
-var port        = process.env.PORT || 8080;
+var port        = process.env.PORT || 8000;
 var bodyParser  = require('body-parser');
-var mysql       = require('mysql');
-var mysqlObj    = {};
-    mysqlObj.connection  =  mysql.createConnection({
-        host : 'localhost',
-        user : 'govhack',
-        password: 'govhack'
-    });
 
 // config
 app.set('view engine', 'jade');
@@ -23,8 +16,10 @@ app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
+
+
 // routing requirements
-var bears = require('./app/routes/bears');
+var municipalities = require('./app/routes/municipalities');
 
 /*
  router.use(function(req, res, next) {
@@ -43,13 +38,15 @@ router.get('/', function (req, res) {
 
 
 // here we have direct, root-level routing
-/*
-router.get('/bears', bears.list);
-router.post('/bears', bears.create);
-router.get('/bears/:bear_id', bears.view);
-router.put('/bears/:bear_id', bears.update);
-router.delete('/bears/:bear_id', bears.remove);
-*/
+
+router.get('/municipality', municipalities.list);
+//router.get('/suburb',       suburbs.list);
+//router.get('/postcode',     postcodes.list);
+
+router.get('/municipality/:municipality_id', municipalities.view);
+//router.get('/suburb/:suburb',                suburbs.view);
+//router.get('/postcode/:postcode',            postcodes.view);
+
 
 // Start the server
 app.listen(port);
