@@ -9,8 +9,13 @@ var router      = express.Router();
 var app         = express();
 var port        = process.env.PORT || 8080;
 var bodyParser  = require('body-parser');
-var mongoose    = require('mongoose');
-//    mongoose.connect('mongodb://localhost:27017/api');
+var mysql       = require('mysql');
+var mysqlObj    = {};
+    mysqlObj.connection  =  mysql.createConnection({
+        host : 'localhost',
+        user : 'govhack',
+        password: 'govhack'
+    });
 
 // config
 app.set('view engine', 'jade');
