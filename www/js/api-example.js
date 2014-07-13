@@ -23,13 +23,13 @@ var call_api = function( context, api_url , api_data ) {
         crossDomain: true,
         url: api_url,
         async: false,
-        data: JSON.stringify(api_data),
+        data: api_data,
         dataType: 'jsonp',
         success: function (data) {
             console.log(data);
             console.log('blah');
             post_api(data);
-            $(context).closest('.result').html(data);
+            $(context).closest('.panel-collapse').find('.result').html(JSON.parse(data));
         },
         fail: function (data) {
             console.log('api call failed');
@@ -65,7 +65,8 @@ $(document).ready(function() {
                             .val()
                     );
                 */
-                municipality = $(this).closest('.panel-collapse').find('input[name=municipality]');
+                municipality = $(this).closest('.panel-collapse').find('input[name=municipality]').val();
+                console.log(municipality);
                 endpoint = $(this).closest('.panel-collapse').find('input[name=endpoint]').val().replace(':municipality_id',municipality);
                 break;
             case "postcode":
@@ -75,7 +76,7 @@ $(document).ready(function() {
                 endpoint = $(this).closest('.panel-collapse').find('input[name=endpoint]').val().replace(':suburb',suburb);
                 break;
         }
-
+        console.log(endpoint);
         var api_url = 'http://govhack.mix.blue:8000'+endpoint;
 
         console.log(data);
