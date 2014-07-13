@@ -3,7 +3,7 @@ body {position: relative; background-color: #888; font-family: Arial, sans-serif
 .controller button {width:125px; font-size: 14px; color:black;}
 .controller {font-weight: bold; color: white; float: right; position: relative; top: 20px; right: 20px; width: 200px;  padding-top:5px; padding-bottom: 5px; background-color: rgba(0,0,0,0.5); text-align: center;}
 .bg, .labels, .fire, .rail {position:absolute; top: 0px; left: 0px; }
-.text {font-size: 20px; font-weight: bold; color: white; line-height: 1.3; width: 917px; margin: 0 auto; text-shadow: 2px 2px #000; }
+.text {font-size: 20px; font-weight: bold; color: white; line-height: 1.3; width: 917px; margin: 0 auto; text-shadow:2px 2px white;}
 .overlay {position:absolute; top: 0px; left: 0px;
     filter: hue-rotate(120deg);
     -webkit-filter: hue-rotate(120deg);

@@ -1,39 +1,72 @@
-<html>
-	<body>
-		
-	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<style>
-		body {position: relative; background-color: #888; font-family: Arial, sans-serif; background-image: url('../animate/ballarat_bg.jpg'); background-size: cover;}
-		.mainstage {width:917px; height: 644px; position: relative; margin: 0 auto; background-color: #ffffee;}
-		.controller button {width:125px; font-size: 14px;}
-		.controller {font-weight: bold; color: white; float: right; position: relative; top: 20px; right: 20px; width: 200px;  padding-top:5px; padding-bottom: 5px; background-color: rgba(0,0,0,0.5); text-align: center;}
-		.bg, .labels, .fire, .rail {position:absolute; top: 0px; left: 0px; }
-		.overlay {position:absolute; top: 0px; left: 0px;
-		filter: hue-rotate(120deg);
-		-webkit-filter: hue-rotate(120deg);
-		-moz-filter: hue-rotate(120deg);
-		filter: brightness(0.9);
-		-webkit-filter: brightness(0.9);
-		-moz-filter: brightness(0.9);
-		
-		}
-		.text {font-size: 20px; font-weight: bold; color: white; line-height: 1.3; width: 917px; margin: 0 auto; }
-		
-		.grey {
-		filter: grayscale(1);
-		-webkit-filter: grayscale(1);
-		-moz-filter: grayscale(1);
-		}
-		.hue1 {
-		filter: hue-rotate(120deg);
-		-webkit-filter: hue-rotate(120deg);
-		}
-		
-		</style>
-		<div class="mainstage">
-			
-<iframe src="https://mapsengine.google.com/map/u/0/embed?mid=za9JPOih4WsA.kQPWpUEbmnS4" width="917" height="644"></iframe>
-</div>
-<BR><BR><BR><BR><BR><BR><BR>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.2 ">
+    <meta name="description" content="Growing Pains">
+    <meta name="author" content="Team cat /dev/null > GovHack14Project_FINAL.project">
+    <!--<link rel="shortcut icon" href="/assets/ico/favicon.png">-->
+    <title>Growing Pains - A GovHack 2014 Project</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/jasny-bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/navmenu.css" rel="stylesheet">
+    <style>
+        body{ background-image: url('../animate/ballarat_bg.jpg'); }
+    </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="navmenu navmenu-inverse navmenu-default navmenu-fixed-left offcanvas-sm">
+    <a class="navmenu-brand visible-md visible-lg" href="/"><img src="/logo.png" alt="Growing Pains" /></a>
+    <ul class="nav navmenu-inverse navmenu-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/new">New Building</a></li>
+        <li><a href="/unregistered">Unregistered Owner Permits</a></li>
+        <li class="active"><a href="/deepdive">Ballarat Deep Dive</a></li>
+        <li><a href="/api">API Documentation</a></li>
+    </ul>
+</div>
+
+<div class="navbar navmenu-inverse navbar-default navbar-fixed-top hidden-md hidden-lg">
+    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#"><img src="/logo.png" alt="Growing Pains" style=""></a>
+</div>
+
+<div class="container">
+
+    <div class="mainstage">
+        <iframe src="https://mapsengine.google.com/map/u/0/embed?mid=za9JPOih4WsA.kQPWpUEbmnS4" width="917" height="644"></iframe>
+    </div>
+    <BR><BR><BR><BR><BR><BR><BR>
+
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="/js/jasny-bootstrap.min.js"></script>
+<script src="/js/api-example.js"></script>
+
+</body>
 </html>
