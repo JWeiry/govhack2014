@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.2 ">
+    <meta name="description" content="Growing Pains">
+    <meta name="author" content="Team cat /dev/null > GovHack14Project_FINAL.project">
+    <!--<link rel="shortcut icon" href="/assets/ico/favicon.png">-->
+    <title>Growing Pains - A GovHack 2014 Project</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/jasny-bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/navmenu.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="navmenu navmenu-inverse navmenu-default navmenu-fixed-left offcanvas-sm">
+    <a class="navmenu-brand visible-md visible-lg" href="#"><img src="/logo.png" alt="Growing Pains" /></a>
+    <ul class="nav navmenu-inverse navmenu-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/new">New Building</a></li>
+        <li><a href="/unregistered">Unregistered Owner Permits</a></li>
+        <li class="active"><a href="/api">API Documentation</a></li>
+    </ul>
+</div>
+
+<div class="navbar navmenu-inverse navbar-default navbar-fixed-top hidden-md hidden-lg">
+    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#"><img src="/logo.png" alt="Growing Pains" style=""></a>
+</div>
+
+<div class="container">
+
+    <div class="panel-group" id="accordion">
+
+        <!-- One -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon bg-success">GET</span>
+                            <div class="form-control">/api/municipality</div>
+                        </div>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                    <p class="description">
+                        Get list of available Municipalities within Victoria as defined by the Victorian Building Authority.<br/>
+                        <a href="VBA-building-supplementary-information.xlsx" target="_blank" >Download</a> Victorian Building Authority Supplementary Information.
+                    </p>
+                    <form>
+                        <input type="hidden" name="endpoint" value="/api/municipality" />
+                        <input type="hidden" name="input" value="municipality" />
+                        <table class="table table-condensed">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Value</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>None</td>
+                                <td>None</td>
+                                <td>None</td>
+                                <td>None</td>
+                            </tr>
+                        </table>
+                        <p>
+                            <button type="button" class="tryme btn btn-danger">Try Me</button>
+                        </p>
+                        <div class="result"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Two -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon bg-success">GET</span>
+                            <div class="form-control">/api/municipality/list/:municipality_id</div>
+                        </div>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                    <p class="description">
+                        Get a list of permits issued inside of a specified Municipality area.
+                    </p>
+                    <form>
+                        <input type="hidden" name="endpoint" value="/api/municipality/list/:municipality_id" />
+                        <input type="hidden" name="input" value="municipality" />
+                        <table class="table table-condensed">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Value</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>municipality_id</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="municipality" value="3" placeholder="3" /></td>
+                                <td>integer</td>
+                                <td><span class="btn btn-danger btn-xs">Required</span> The Municipality ID to search</td>
+                            </tr>
+                            <tr>
+                                <td>year</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="year" value="2014" placeholder="2014" /></td>
+                                <td>integer</td>
+                                <td>Specify the given year to search</td>
+                            </tr>
+                            <tr>
+                                <td>month</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="month" value="2" placeholder="2" /></td>
+                                <td>integer</td>
+                                <td>Specify the given month to search</td>
+                            </tr>
+                            <tr>
+                                <td>type</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="type" value="1" placeholder="1" /></td>
+                                <td>integer</td>
+                                <td>The type of work being completed</td>
+                            </tr>
+                            <tr>
+                                <td>offset</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="offset" value="0" placeholder="0" /></td>
+                                <td>integer</td>
+                                <td>The number of rows to offset the results</td>
+                            </tr>
+                            <tr>
+                                <td>limit</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="limit" value="20" placeholder="20" /></td>
+                                <td>integer</td>
+                                <td>Specify to the limit the number of items returned from the search</td>
+                            </tr>
+                        </table>
+                        <p>
+                            <button type="button" class="tryme btn btn-danger">Try Me</button>
+                        </p>
+                        <div class="result"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Three -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon bg-success">GET</span>
+                            <div class="form-control">/api/municipality/summary/:municipality_id</div>
+                        </div>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                    <p class="description">
+                        Get a summary of information for a specified Municipality area.
+                    </p>
+                    <form>
+                        <input type="hidden" name="endpoint" value="/api/municipality/summary/:municipality_id" />
+                        <input type="hidden" name="input" value="municipality" />
+                        <table class="table table-condensed">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Value</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>municipality_id</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="municipality" value="3" placeholder="3" /></td>
+                                <td>integer</td>
+                                <td><span class="btn btn-danger btn-xs">Required</span> The Municipality ID to search</td>
+                            </tr>
+                            <tr>
+                                <td>year</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="year" value="2014" placeholder="2014" /></td>
+                                <td>integer</td>
+                                <td>Specify the given year to search</td>
+                            </tr>
+                            <tr>
+                                <td>month</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="month" value="2" placeholder="2" /></td>
+                                <td>integer</td>
+                                <td>Specify the given month to search</td>
+                            </tr>
+                        </table>
+                        <p>
+                            <button type="button" class="tryme btn btn-danger">Try Me</button>
+                        </p>
+                        <div class="result"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Four -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" class="collapsed">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon bg-success">GET</span>
+                            <div class="form-control">/api/postcode/:postcode</div>
+                        </div>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                    <p class="description">
+                        Get a list of permits issued from a given postcode.
+                    </p>
+                    <form>
+                        <input type="hidden" name="endpoint" value="/api/postcode/:postcode" />
+                        <input type="hidden" name="input" value="postcode" />
+                        <table class="table table-condensed">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Value</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>postcode</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="postcode" value="3350" placeholder="3350" /></td>
+                                <td>integer</td>
+                                <td><span class="btn btn-danger btn-xs">Required</span> The postcode to search</td>
+                            </tr>
+                            <tr>
+                                <td>year</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="year" value="" placeholder="2014" /></td>
+                                <td>integer</td>
+                                <td>The year to search</td>
+                            </tr>
+                            <tr>
+                                <td>month</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="month" value="" placeholder="2" /></td>
+                                <td>integer</td>
+                                <td>The month to search</td>
+                            </tr>
+                        </table>
+                        <p>
+                            <button type="button" class="tryme btn btn-danger">Try Me</button>
+                        </p>
+                        <div class="result"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Five -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" class="collapsed">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon bg-success">GET</span>
+                            <div class="form-control">/api/suburb/:suburb</div>
+                        </div>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                    <p class="description">
+                        Get a summary of information for a specified Municipality area.
+                    </p>
+                    <form>
+                        <input type="hidden" name="endpoint" value="/api/suburb/:suburb" />
+                        <input type="hidden" name="input" value="suburb" />
+                        <table class="table table-condensed">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Value</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>suburb</td>
+                                <td class="col-md-2"><input type="text" class="form-control"name="suburb"  value="Ballarat Central" placeholder="Ballarat Central" /></td>
+                                <td>string</td>
+                                <td><span class="btn btn-danger btn-xs">Required</span> Specify the given Suburb to search (buggy)</td>
+                            </tr>
+                            <tr>
+                                <td>year</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="year" value="" placeholder="2014" /></td>
+                                <td>integer</td>
+                                <td>Specify the given year to search</td>
+                            </tr>
+                            <tr>
+                                <td>month</td>
+                                <td class="col-md-2"><input type="text" class="form-control" name="month" value="" placeholder="2" /></td>
+                                <td>integer</td>
+                                <td>Specify the given month to search</td>
+                            </tr>
+                        </table>
+                        <p>
+                            <button type="button" class="tryme btn btn-danger">Try Me</button>
+                        </p>
+                        <div class="result"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="/js/jasny-bootstrap.min.js"></script>
+<script src="/js/api-example.js"></script>
+
+</body>
+</html>

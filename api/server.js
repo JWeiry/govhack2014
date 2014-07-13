@@ -14,7 +14,7 @@ var bodyParser  = require('body-parser');
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({ extended: true }));
-
+//app.options('/api',function(req,res){ res.header("Access-Control-Allow-Origin", "*");})
 
 
 
