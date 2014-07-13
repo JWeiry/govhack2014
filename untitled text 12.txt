@@ -1,0 +1,41 @@
+        "select count(*) from VBA_DataVic_Building_Permits where Levy_return_year = "+nYear+";\
+        select SUM(Reported_Cost_of_works) from VBA_DataVic_Building_Permits where Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where Owner_sector = 'P' and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where Owner_sector = 'L' and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where Owner_sector = 'S' and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where Owner_sector = 'C' and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where Nature_of_work = 1 and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where Nature_of_work = 2 and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where Nature_of_work = 3 and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where Nature_of_work = 4 and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where Nature_of_work = 5 and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where Nature_of_work = 6 and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where Nature_of_work = 7 and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where Nature_of_work = 8 and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where BASIS_OwnerBuilder = 0 and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where BASIS_OwnerBuilder = -1 and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+";\
+        select count(*) from VBA_DataVic_Building_Permits where BASIS_OwnerBuilder = 2 and Levy_return_year = "+nYear+" and site_municipality = "+req.params.municipality_id+""
+        
+        
+        
+            var object = {};
+                object.totalWorks                   = (result[0]).total_works;
+                object.costTotal                    = (result[1]).cost_reported_total;
+                object.owner = {};
+                object.owner.private                = (result[2]).owner_private;
+                object.owner.local                  = (result[3]).owner_local;
+                object.owner.state                  = (result[4]).owner_state;
+                object.owner.commonwealth           = (result[5]).owner_commonwealth;
+                object.nature = {};
+                object.nature.new                   = (result[6]).nature_new;
+                object.nature.rebuild               = (result[7]).nature_rebuild;
+                object.nature.extension             = (result[8]).nature_extension;
+                object.nature.alteration            = (result[9]).nature_alteration;
+                object.nature.change                = (result[10]).nature_change;
+                object.nature.demolition            = (result[11]).nature_demolition;
+                object.nature.removal               = (result[12]).nature_removal;
+                object.nature.other                 = (result[13]).nature_other;
+                object.builder = {};
+                object.builder.registered           = (result[14]).builder_registered;
+                object.builder.owner                = (result[15]).builder_owner;
+                object.builder.owner_registered     = (result[16]).builder_owner_registered;
